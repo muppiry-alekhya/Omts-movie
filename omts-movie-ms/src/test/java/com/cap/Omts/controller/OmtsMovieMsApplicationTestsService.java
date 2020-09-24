@@ -26,11 +26,6 @@ import com.capg.omts.movie.OmtsMovieMsApplication;
 import com.capg.omts.movie.model.Movie;
 import com.capg.omts.movie.service.*;
 
-
-
-
-
-
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes =OmtsMovieMsApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 //@ContextConfiguration(locations= {"classpath*:/spring/test-content.xml"})
@@ -64,6 +59,7 @@ public class OmtsMovieMsApplicationTestsService
     
     @Test
     public void testByMovieId()
+    
     {
     	int movieId=3415;
     	Movie movie=service.getMovieById(movieId);
