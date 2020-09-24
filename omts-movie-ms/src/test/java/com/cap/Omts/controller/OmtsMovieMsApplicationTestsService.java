@@ -87,16 +87,8 @@ public class OmtsMovieMsApplicationTestsService
     
     
     
-    /*Test
-    public void testGetDetails()
-    {
-    	
-    	List<Booking> booking=bookingservice.getDetails();
-    	
-    	assertNotNull(booking);
-    	
-    }
-    
+  
+    /*
     
     @Test
     public void testdeleteBookingById()
