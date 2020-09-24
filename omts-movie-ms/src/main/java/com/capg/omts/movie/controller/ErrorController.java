@@ -12,11 +12,12 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import com.capg.omts.movie.Exception.MovieException;
 import com.capg.omts.movie.model.ErrorResponse;
 
-
-
+/*Error Controller implementation is a global error handler 
+**/
 @RestControllerAdvice
-public class ErrorController {
-
+public class ErrorController 
+{
+  
 	@ResponseStatus(code = HttpStatus.BAD_REQUEST)
 	@ExceptionHandler(value = {MovieException.class})
 	public ErrorResponse handleInvalidPasswordException(MovieException exception, HttpServletRequest request)
@@ -25,6 +26,7 @@ public class ErrorController {
 	
 				HttpStatus.BAD_REQUEST.getReasonPhrase(), HttpStatus.BAD_REQUEST.value(), request.getRequestURI());
 	}
+	
 	
 	
 }

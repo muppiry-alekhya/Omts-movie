@@ -12,5 +12,7 @@ public class MovieException extends RuntimeException{
 		// TODO Auto-generated constructor stub
 	
 		super();
-	}
+	
+	 }
+
 }

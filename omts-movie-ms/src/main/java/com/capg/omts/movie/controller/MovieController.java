@@ -24,41 +24,43 @@ import com.capg.omts.movie.service.MovieServiceImpl;
 @RestController
 @CrossOrigin
 @RequestMapping("/movie")
-public class MovieController {
+public class MovieController 
 
-	@Autowired
+{
+	@Autowired //Enables to inject the object dependency implicitly
 	MovieServiceImpl service;
 	
 	
 	/** 
-	 *This method is used to add the details of movie  
-	 * 
+	 *Adds the details of movie  
 	*/
 	
 	@PostMapping("/add")
 	public Movie addMovie(@RequestBody Movie movie) 
 	{
-        //System.out.println("movie");
+        		
 		int movieId = movie.getMovieId();
+		
 		if (service.validateMovieId(movieId))
-		return service.addMovie(movie);
+		
+			return service.addMovie(movie);
 		return movie;
 		
 	}
 	
 	/**
-	 * This method is used to update the details of movie
+	 *Updates the details of movie
 	**/
+	
 	@PutMapping("/update")
-	public Movie updateMovie(@RequestBody Movie movie ) 
+	public Movie updateMovie(@RequestBody Movie movie) 
+	
 	{
 	return service.updateMovie(movie);
     }
 	
 	
-	/**
-	 * 
-	 * This method is used to delete the movie by id
+	/* Deletes the movie by id
 	 */
 	
 	@DeleteMapping("/delete/id/{id}")
@@ -69,7 +71,7 @@ public class MovieController {
 	}
 	
 	/** 
-	 *This method is used to get the details of movie by movieId
+	 *Returns the details of movie by movieId
 	 */
 	
 	@GetMapping("/name/{movieName}")
@@ -79,8 +81,7 @@ public class MovieController {
 	return service.getByMovieName(movieName);
 	}
 
-   /**
-    * This method is used to get movieId
+   /** Returns the movieId
     */
 	
 	@GetMapping("get/id/{id}")
@@ -91,9 +92,7 @@ public class MovieController {
 		return service.getMovieById(movieId);
 	}
 
-/**
- * 
- * This method is used to get the list of all movies
+/* Returns the list of all movies
  */
 	
 	@GetMapping("/all")

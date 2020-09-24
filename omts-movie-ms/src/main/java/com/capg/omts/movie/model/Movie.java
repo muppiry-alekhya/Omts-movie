@@ -9,6 +9,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 import org.springframework.format.annotation.DateTimeFormat;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 /**
 	* The Model Class describes about the Attributes of the Module
 	
@@ -31,16 +33,21 @@ public class Movie {
 	
 	//@CollectionTable(name = "Movie")
 	private List<String> languages;
-	@DateTimeFormat(pattern = "yyyy/MM/dd")
+	//@DateTimeFormat(pattern = "yyyy/MM/dd")
+	
+	@JsonFormat(pattern="yyyy-MM-dd")
 	private LocalDate movieReleaseDate;
 	
-	public Movie() {
+	public Movie()
+	{
 		
 	}
 	
 
 	public Movie(int movieId, String movieName, String movieGenre, String movieDirector, int movieLength,
-			List<String> languages, LocalDate movieReleaseDate) {
+			List<String> languages, LocalDate movieReleaseDate)
+	
+	{
 		super();
 		this.movieId = movieId;
 		this.movieName = movieName;
@@ -52,64 +59,82 @@ public class Movie {
 	}
 
 
-	public int getMovieId() {
+	public int getMovieId()
+	{
 		return movieId;
 	}
 	
-	public void setMovieId(int movieId) {
+	public void setMovieId(int movieId) 
+	
+	{
 		this.movieId = movieId;
 	}
 
-	public String getMovieName() {
+	public String getMovieName() 
+	{
 		return movieName;
 	}
 
-	public void setMovieName(String movieName) {
+	public void setMovieName(String movieName) 
+	{
 		this.movieName = movieName;
 	}
 
-	public String getMovieGenre() {
+	public String getMovieGenre() 
+	
+	{
 		return movieGenre;
 	}
 
-	public void setMovieGenre(String movieGenre) {
+	
+	public void setMovieGenre(String movieGenre)
+	{
 		this.movieGenre = movieGenre;
 	}
 
-	public String getMovieDirector() {
+	public String getMovieDirector() 
+	{
 		return movieDirector;
 	}
 
-	public void setMovieDirector(String movieDirector) {
+	public void setMovieDirector(String movieDirector) 
+	{
 		this.movieDirector = movieDirector;
 	}
 
-	public int getMovieLength() {
+	public int getMovieLength() 
+	{
 		return movieLength;
 	}
 
-	public void setMovieLength(int movieLength) {
+	public void setMovieLength(int movieLength) 
+	{
 		this.movieLength = movieLength;
 	}
 
-	public List<String> getLanguages() {
+	public List<String> getLanguages() 
+	{
 		return languages;
 	}
 
-	public void setLanguages(List<String> languages) {
+	public void setLanguages(List<String> languages)
+	{
 		this.languages = languages;
 	}
 
-	public LocalDate getMovieReleaseDate() {
+	public LocalDate getMovieReleaseDate() 
+	{
 		return movieReleaseDate;
 	}
 
-	public void setMovieReleaseDate(LocalDate movieReleaseDate) {
+	public void setMovieReleaseDate(LocalDate movieReleaseDate)
+	{
 		this.movieReleaseDate = movieReleaseDate;
 	}
 
 	@Override
-	public String toString() {
+	public String toString()
+	{
 		return "Movie [movieId=" + movieId + ", movieName=" + movieName + ", movieGenre=" + movieGenre
 				+ ", movieDirector=" + movieDirector + ", movieLength=" + movieLength + ", languages=" + languages
 				+ ", movieReleaseDate=" + movieReleaseDate + "]";

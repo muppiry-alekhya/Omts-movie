@@ -15,9 +15,7 @@ import com.capg.omts.movie.model.Movie;
 public interface MovieRepository extends JpaRepository<Movie, Integer>{
 	/*   *******THIS IS SPRING DATA JPA REPOSITORY******
 	 * This is Repository class which extends the JpaRepository
-	 * 
 	 */
-	
 	 public Movie getByMovieName(String movieName);
 	
 	
